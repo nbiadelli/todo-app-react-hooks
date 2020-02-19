@@ -1,15 +1,15 @@
-import React from 'react';
-import TaskList from './TaskList';
-import TaskForm from './TaskForm';
-import Header from './Header';
-import TaskListContextProvider  from '../context/TaskListContext'
-import '../App.css';
+import React from "react";
+import TaskList from "./TaskList";
+import TaskForm from "./TaskForm";
+import Header from "./Header";
+import TaskListContextProvider from "../context/TaskListContext";
+import "../App.css";
 
-const App =() => {
+const App = () => {
   return (
     <TaskListContextProvider>
-      <div className='container'>
-        <div className='app-wrapper'>
+      <div className="container">
+        <div className="app-wrapper">
           <div className="main">
             <Header />
             <TaskForm />
@@ -19,6 +19,6 @@ const App =() => {
       </div>
     </TaskListContextProvider>
   );
-}
+};
 
 export default App;
