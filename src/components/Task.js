@@ -4,7 +4,7 @@ import { TaskListContext } from "../context/TaskListContext";
 const Task = ({ task }) => {
   const { removeTask, findItem, toggleTask } = useContext(TaskListContext);
   return (
-    <li className="list-item">
+    <li className="list-item" data-testid="list-task">
       <span className={task.done ? "list-item-done" : ""}>{task.title}</span>
       <div>
         <button
@@ -20,6 +20,7 @@ const Task = ({ task }) => {
           type="checkbox"
           id={task.id}
           onClick={toggleTask}
+          defaultChecked={task.done}
         />
       </div>
     </li>

@@ -2,7 +2,6 @@ import React, { createContext, useState, useEffect } from "react";
 import uuid from "uuid";
 
 export const TaskListContext = createContext();
-
 const TaskListContextProvider = props => {
   const initialState = JSON.parse(localStorage.getItem("tasks")) || [];
 
@@ -31,12 +30,14 @@ const TaskListContextProvider = props => {
     setTasks([...tasksUndone, ...tasksDone]);
   };
 
-  const cleartList = () => {
+  const cleartList = e => {
+    e.preventDefault();
     setTasks([]);
   };
 
   const findItem = id => {
     const item = tasks.find(task => task.id === id);
+    console.log("oioi", item);
     setEditItem(item);
   };
 
